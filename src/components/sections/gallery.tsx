@@ -35,7 +35,7 @@ const looks: Look[] = [
     label: "Cromo verde esmeralda",
     alt: "Uñas cromadas verde esmeralda con brillo espejo",
     src: "/images/gallery/cromo-verde.webp",
-    grid: "",
+    grid: "md:col-span-1",
   },
   {
     id: "lavanda-y2k",
@@ -95,7 +95,7 @@ export function Gallery() {
                 <Button
                   size="sm"
                   variant="secondary"
-                  className="opacity-0 transition-opacity group-hover:opacity-100 focus-visible:opacity-100 max-md:opacity-100"
+                  className="h-11 opacity-0 transition-opacity group-hover:opacity-100 focus-visible:opacity-100 max-md:opacity-100"
                   onClick={() => requestPrefill("nail-art")}
                 >
                   Quiero este
