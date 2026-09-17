@@ -53,11 +53,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           Ir a reservar
         </a>
         {children}
-      {/* impeccable-live-start */}
-      {/* eslint-disable-next-line @next/next/no-sync-scripts -- dev-only live-mode helper injected by Impeccable */}
-<script src="http://localhost:8400/live.js?token=b92cd50b-b5b9-4ea8-8735-9215900af947"></script>
-{/* impeccable-live-end */}
-</body>
+      </body>
     </html>
   );
 }
