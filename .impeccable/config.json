@@ -1,0 +1,14 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "design-system-color",
+        "value": "#ffffff",
+        "createdAt": "2026-09-16T22:35:31.554Z",
+        "reason": "Orb gloss highlight, not a UI color token"
+      }
+    ]
+  }
+}
