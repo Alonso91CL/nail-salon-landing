@@ -30,7 +30,8 @@ Landing page demo para salón de uñas: Next.js 16 + Tailwind v4 + shadcn/ui + r
 - **Comandos Git Flow** (solo bajo pedido explícito del usuario):
   - *Feature:* `git checkout -b feature/<name> develop` → trabajo → `git checkout develop; git merge --no-ff feature/<name>` → `git branch -d feature/<name>` → push develop.
   - *Release:* `git checkout -b release/v<X.Y.Z> develop` → bump version + fixes → `git checkout master; git merge --no-ff release/v<X.Y.Z> -m "release: v<X.Y.Z>"` → `git tag -a v<X.Y.Z> -m "release v<X.Y.Z>"` → `git checkout develop; git merge --no-ff release/v<X.Y.Z>` → `git branch -d release/v<X.Y.Z>` → `git push origin master develop --follow-tags`.
-  - *Hotfix:* `git checkout -b hotfix/<name> master` → fix → `git checkout master; git merge --no-ff hotfix/<name>` → `git checkout develop; git merge --no-ff hotfix/<name>` → `git push origin master develop` → eliminar rama hotfix (local + remote).
+  - *Hotfix:* `git checkout -b hotfix/<name> master` → fix → `git checkout master; git merge --no-ff hotfix/<name>` → `git tag -a v<X.Y.Z> -m "hotfix v<X.Y.Z>"` → `git checkout develop; git merge --no-ff hotfix/<name>` → `git push origin master develop --follow-tags` → eliminar rama hotfix (local + remote).
+  - Ref: [Atlassian Gitflow Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) | Flujo: feature→develop, release→master+develop+tag, hotfix→master+develop+tag.
 
 ## Toolchain (Windows — gotchas reales)
 
