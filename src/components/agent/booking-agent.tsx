@@ -167,6 +167,7 @@ export function BookingAgent() {
   );
 
   const { result, messages } = chat;
+  const lastAgentId = [...messages].reverse().find((m) => m.role === "agent")?.id;
   const showBookingHandoff = result.step === "handoff" && !result.pendingCancelId;
   const showCancelHandoff = result.step === "handoff" && !!result.pendingCancelId;
   const canConfirm = Boolean(result.draft.service && result.draft.dateLabel && result.draft.name);
@@ -230,23 +231,26 @@ export function BookingAgent() {
         <div
           ref={scrollRef}
           role="log"
-          aria-live="polite"
           aria-label="Conversación de reserva"
           className="flex flex-col gap-3 px-4 py-4"
         >
-          {messages.map((m) => (
-            <p
-              key={m.id}
-              className={cn(
-                "max-w-[85%] rounded-2xl px-4 py-2.5 text-sm whitespace-pre-line",
-                m.role === "agent"
-                  ? "self-start rounded-bl-sm border border-muted bg-muted/70 text-foreground"
-                  : "self-end rounded-br-sm bg-primary text-primary-foreground",
-              )}
-            >
-              {m.text}
-            </p>
-          ))}
+          {messages.map((m) => {
+            const isLiveAgent = m.role === "agent" && m.id === lastAgentId;
+            return (
+              <p
+                key={m.id}
+                aria-live={isLiveAgent ? "polite" : undefined}
+                className={cn(
+                  "max-w-[85%] rounded-2xl px-4 py-2.5 text-sm whitespace-pre-line",
+                  m.role === "agent"
+                    ? "self-start rounded-bl-sm border border-muted bg-muted/70 text-foreground"
+                    : "self-end rounded-br-sm bg-primary text-primary-foreground",
+                )}
+              >
+                {m.text}
+              </p>
+            );
+          })}
           {typing ? (
             <p className="self-start text-xs text-muted-foreground italic" aria-hidden="true">
               Magnetita está escribiendo…
@@ -348,8 +352,9 @@ export function BookingAgent() {
           onChange={(e) => setInput(e.target.value)}
           placeholder="Escribe una respuesta…"
           autoComplete="off"
+          className="h-11"
         />
-        <Button type="submit" size="icon-lg" disabled={!input.trim() || typing} aria-label="Enviar mensaje">
+        <Button type="submit" size="icon-lg" disabled={!input.trim() || typing} aria-label="Enviar mensaje" className="size-11">
           <Send aria-hidden="true" />
         </Button>
       </form>

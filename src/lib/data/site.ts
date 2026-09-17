@@ -6,6 +6,7 @@ export const site = {
   // TODO(demo): reemplazar por datos reales del negocio
   whatsappPhone: "569XXXXXXXX",
   address: "San Bernardo, Santiago, Chile",
+  attention: "Atención con cita",
   instagram: "https://www.instagram.com/magnetica.beautybar",
   hours: [
     { days: "Lunes a viernes", time: "10:00 – 20:00" },

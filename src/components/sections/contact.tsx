@@ -22,7 +22,7 @@ export function Contact() {
               <li className="flex items-center gap-2">
                 <MapPin aria-hidden="true" className="size-4 shrink-0 text-primary-glow" />
                 {site.address}
-                <span className="text-muted-foreground">(atención solo con cita)</span>
+                <span className="text-muted-foreground">({site.attention.toLowerCase()})</span>
               </li>
               {site.hours.map((h) => (
                 <li key={h.days} className="flex items-center gap-2">

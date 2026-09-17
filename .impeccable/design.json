@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-16T00:00:00.000Z",
+  "title": "Design System: Magnetica Beauty Bar",
+  "extensions": {
+    "colorMeta": {
+      "background": { "role": "neutral", "displayName": "Negro Medianoche", "canonical": "#08040b", "tonalRamp": ["#0a0a12", "#120f1a", "#1a1524", "#231c30", "#2c223d", "#382b4c", "#46355e", "#563f72"] },
+      "foreground": { "role": "neutral", "displayName": "Rosa Perlado", "canonical": "#f6eaf3", "tonalRamp": ["#f6eaf3", "#d9c7d3", "#bda4b6", "#a28399", "#88637e", "#6e4464", "#56294c", "#3f1035"] },
+      "primary": { "role": "primary", "displayName": "Coral Hipnótico", "canonical": "#e11d74", "tonalRamp": ["#7a0a3c", "#941045", "#b0174f", "#c61c5c", "#e11d74", "#ff5a99", "#ff8fc0", "#ffc6e2"] },
+      "primary-glow": { "role": "primary", "displayName": "Magenta Magnético", "canonical": "#ff3d9a", "tonalRamp": ["#8f0f52", "#a61a62", "#c12774", "#d43286", "#ff3d9a", "#ff6cb5", "#ffa0d2", "#ffd6ec"] },
+      "secondary": { "role": "secondary", "displayName": "Violeta Magnetita", "canonical": "#8b5cf6", "tonalRamp": ["#4c1d95", "#5b21b6", "#6d28d9", "#7c3aed", "#8b5cf6", "#a78bfa", "#c4b5fd", "#ddd6fe"] },
+      "accent": { "role": "tertiary", "displayName": "Dorado Destello", "canonical": "#f5c542", "tonalRamp": ["#7c5f00", "#997700", "#b89200", "#d4aa17", "#f5c542", "#ffdd7a", "#ffeaab", "#fff8e0"] },
+      "muted": { "role": "neutral", "displayName": "Ciruela Oscura", "canonical": "#2a1a31", "tonalRamp": ["#221427", "#2a1a31", "#33223c", "#3c2a47", "#453354", "#503d62", "#5b4770", "#66527f"] },
+      "muted-foreground": { "role": "neutral", "displayName": "Lavanda Griseada", "canonical": "#b9a3c4", "tonalRamp": ["#8a7695", "#97829f", "#a28caa", "#ad96b5", "#b9a3c4", "#c6b3d0", "#d2c3db", "#dfd3e7"] },
+      "border": { "role": "neutral", "displayName": "Borde Pétalo", "canonical": "#3a2540", "tonalRamp": ["#2c1a31", "#3a2540", "#483052", "#573b66", "#66477a", "#765390", "#875fa6", "#996b9e"] },
+      "card": { "role": "neutral", "displayName": "Tinta Card", "canonical": "#120a17", "tonalRamp": ["#0c0611", "#120a17", "#1a101f", "#221528", "#2b1c33", "#35243f", "#3f2d4b", "#4b3758"] },
+      "popover": { "role": "neutral", "displayName": "Noche Popover", "canonical": "#14091f", "tonalRamp": ["#0d0515", "#14091f", "#1d0f2a", "#261536", "#301c42", "#3a234f", "#452c5d", "#50356c"] },
+      "input": { "role": "neutral", "displayName": "Noche Input", "canonical": "#1a0f20", "tonalRamp": ["#120a16", "#1a0f20", "#241730", "#2e1e3f", "#39264f", "#452f60", "#523871", "#5f4283"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "H1 de hero: una línea, balanceada, serif editorial." },
+      "headline": { "displayName": "Headline", "purpose": "Títulos de sección y encabezados emotivos." },
+      "title": { "displayName": "Title", "purpose": "Títulos internos de tarjetas y diálogos." },
+      "body": { "displayName": "Body", "purpose": "Texto de lectura; máx ~65ch en párrafos largos." },
+      "label": { "displayName": "Label", "purpose": "Eyebrows y micro-marca; uppercase tracking amplio." }
+    },
+    "shadows": [
+      { "name": "halo-cta", "value": "0 0 24px color-mix(in srgb, #ff3d9a 55%, transparent), 0 0 64px color-mix(in srgb, #ff3d9a 25%, transparent)", "purpose": "Presencia luminosa de la acción primaria en penumbra." },
+      { "name": "aura-texto", "value": "0 0 18px color-mix(in srgb, #ff3d9a 60%, transparent)", "purpose": "Aura magéntica sobre palabras display premium (text-glow)." }
+    ],
+    "motion": [
+      { "name": "ease-standard", "value": "cubic-bezier(0.4, 0, 0.2, 1)", "purpose": "Transiciones de estado por defecto (no bounce/elástico)." },
+      { "name": "ease-sparkle", "value": "ease-in-out 2.6s infinite", "purpose": "Parpadeo de destellos decorativos; desactivado en reduced-motion." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1280px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button (Reservar)",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Acción principal con halo magéntico; jerarquía máxima de la página.",
+      "html": "<button class=\"ds-btn-primary\">Reservar ahora</button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; height: 48px; padding: 0 32px; border: none; border-radius: 0.75rem; background: #e11d74; color: #ffffff; font-family: Inter, ui-sans-serif, system-ui, sans-serif; font-size: 1rem; font-weight: 500; box-shadow: 0 0 24px rgba(255,61,154,0.55), 0 0 64px rgba(255,61,154,0.25); cursor: pointer; transition: background 0.18s cubic-bezier(0.4,0,0.2,1); } .ds-btn-primary:hover { background: #ff3d9a; } .ds-btn-primary:focus-visible { outline: none; box-shadow: 0 0 0 3px rgba(255,61,154,0.5); }"
+    },
+    {
+      "name": "Outline Button (WhatsApp)",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Acción secundaria: carbón con borde pétalo y icono de chat.",
+      "html": "<button class=\"ds-btn-outline\"><svg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M21 11.5a8.5 8.5 0 0 1-12.5 7.4L3 21l2.1-5.5A8.5 8.5 0 1 1 21 11.5z\"/></svg>Escribir por WhatsApp</button>",
+      "css": ".ds-btn-outline { display: inline-flex; align-items: center; justify-content: center; gap: 6px; height: 48px; padding: 0 32px; border-radius: 0.75rem; border: 1px solid #3a2540; background: #08040b; color: #f6eaf3; font-family: Inter, ui-sans-serif, system-ui, sans-serif; font-size: 1rem; font-weight: 500; cursor: pointer; transition: background 0.18s cubic-bezier(0.4,0,0.2,1); } .ds-btn-outline:hover { background: #2a1a31; } .ds-btn-outline:focus-visible { outline: none; box-shadow: 0 0 0 3px rgba(255,61,154,0.5); }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Acción silenciosa en toolbars; hover en ciruela.",
+      "html": "<button class=\"ds-btn-ghost\">Nueva conversación</button>",
+      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; justify-content: center; height: 36px; padding: 0 12px; border: none; border-radius: 0.75rem; background: transparent; color: #f6eaf3; font-family: Inter, ui-sans-serif, system-ui, sans-serif; font-size: 0.9rem; font-weight: 500; cursor: pointer; transition: background 0.18s cubic-bezier(0.4,0,0.2,1); } .ds-btn-ghost:hover { background: #2a1a31; } .ds-btn-ghost:focus-visible { outline: none; box-shadow: 0 0 0 3px rgba(255,61,154,0.5); }"
+    },
+    {
+      "name": "Input (agente / formularios)",
+      "kind": "input",
+      "refersTo": "input-stage",
+      "description": "Campo de texto nocturno; foco magéntico.",
+      "html": "<input class=\"ds-input\" placeholder=\"Escribe una respuesta…\" />",
+      "css": ".ds-input { width: 100%; height: 36px; padding: 0 14px; border-radius: 0.75rem; border: 1px solid #3a2540; background: #1a0f20; color: #f6eaf3; font-family: Inter, ui-sans-serif, system-ui, sans-serif; font-size: 0.875rem; transition: border-color 0.18s, box-shadow 0.18s; } .ds-input::placeholder { color: #b9a3c4; } .ds-input:focus-visible { outline: none; border-color: #ff3d9a; box-shadow: 0 0 0 3px rgba(255,61,154,0.5); }"
+    },
+    {
+      "name": "Chip / Acción rápida",
+      "kind": "chip",
+      "refersTo": "button-outline",
+      "description": "Opción táctil del agente (servicios, horarios, precios).",
+      "html": "<button class=\"ds-chip\">Mis reservas</button>",
+      "css": ".ds-chip { display: inline-flex; align-items: center; height: 28px; padding: 0 10px; border-radius: 9999px; border: 1px solid #3a2540; background: #08040b; color: #f6eaf3; font-family: Inter, ui-sans-serif, system-ui, sans-serif; font-size: 0.8rem; font-weight: 500; cursor: pointer; transition: background 0.18s, color 0.18s; } .ds-chip:hover { background: #2a1a31; } .ds-chip:focus-visible { outline: none; box-shadow: 0 0 0 3px rgba(255,61,154,0.5); }"
+    },
+    {
+      "name": "Glass Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Superficie glass sobre imágenes: blur 14 y borde translúcido.",
+      "html": "<div class=\"ds-card\"><p class=\"ds-card-title\">Soft gel / esculpido</p><p class=\"ds-card-text\">Estructura y largo a tu medida.</p></div>",
+      "css": ".ds-card { border-radius: 1.35rem; padding: 24px; background: rgba(246,234,243,0.05); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border: 1px solid rgba(246,234,243,0.12); } .ds-card-title { margin: 0 0 4px; font-family: 'Playfair Display', Georgia, serif; font-size: 1.25rem; font-weight: 600; color: #f6eaf3; } .ds-card-text { margin: 0; font-family: Inter, ui-sans-serif, system-ui, sans-serif; font-size: 0.875rem; color: #b9a3c4; line-height: 1.6; }"
+    },
+    {
+      "name": "Navbar",
+      "kind": "nav",
+      "refersTo": "button-primary",
+      "description": "Barra sticky translúcida con logo 'M' luminoso y CTA de reserva.",
+      "html": "<nav class=\"ds-nav\"><span class=\"ds-logo\">M</span><a class=\"ds-nav-link\" href=\"#\">Servicios</a><a class=\"ds-nav-link\" href=\"#\">Galería</a><button class=\"ds-btn-primary ds-nav-cta\">Reservar</button></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; gap: 24px; padding: 12px 24px; background: rgba(8,4,11,0.8); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(58,37,64,0.6); } .ds-logo { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 9999px; border: 1px solid rgba(225,29,116,0.6); background: rgba(225,29,116,0.15); color: #ff3d9a; font-family: 'Playfair Display', Georgia, serif; font-weight: 600; box-shadow: 0 0 18px rgba(255,61,154,0.35); } .ds-nav-link { color: #b9a3c4; font-family: Inter, ui-sans-serif, system-ui, sans-serif; font-size: 0.875rem; text-decoration: none; transition: color 0.18s; } .ds-nav-link:hover { color: #f6eaf3; } .ds-nav-cta { height: 36px !important; padding: 0 12px !important; font-size: 0.875rem !important; }"
+    },
+    {
+      "name": "Chat Bubble (Agente)",
+      "kind": "custom",
+      "refersTo": "card",
+      "description": "Burbuja de mensaje del agente: ciruela con borde pétalo, borde izquierdo plano.",
+      "html": "<div class=\"ds-bubble\">¡Hola! ✨ Soy Magnetita, ¿qué servicio te provoca hoy?</div>",
+      "css": ".ds-bubble { max-width: 85%; padding: 10px 16px; border-radius: 1rem; border-top-left-radius: 0.25rem; background: rgba(42,26,49,0.7); color: #f6eaf3; font-family: Inter, ui-sans-serif, system-ui, sans-serif; font-size: 0.875rem; line-height: 1.5; border: 1px solid #3a2540; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "La Magnetita de San Bernardo",
+    "overview": "La Magnetita es un sistema dark-first: un lienzo de medianoche casi negro sobre el que la luz aparece con cuenta gotas y siempre con intención. Esa luz —glow magenta, destellos cromados, dorados puntuales— es el producto, no la decoración: atrae como un imán y hace que cada CTA se lea como un objeto luminoso en penumbra. Todo lo que no está iluminado se retira: superficies oscuras por capas tonales, bordes pétalos casi invisibles, texto rosa perlado en vez de blanco puro. La tipografía editorial (Playfair Display) en los héroes ancla el glamour de autor; Inter sostiene la lectura y la operación.",
+    "keyCharacteristics": [
+      "Oscuridad es lienzo; luz es producto (glow = CTA y firmas).",
+      "Contraste alto de valor, baja saturación de fondo; acento en un solo magenta intenso.",
+      "Superficies en capas tonales y glass con blur sutil; sin sombras grises ambientales.",
+      "Display editorial para héroes, sans para lectura; tracking amplio en etiquetas.",
+      "Conversación integrada (agente de reservas) como pieza material del sistema."
+    ],
+    "rules": [
+      { "name": "The Midnight Canvas Rule", "body": "El fondo es medianoche. Cada superficie elevada sube un escalón de luz, no una sombra.", "section": "colors" },
+      { "name": "The Rare Gem Rule", "body": "El glow magenta se usa sobre ≤10 % del área de cualquier pantalla (CTA primarios y firmas). Su rareza es el punto.", "section": "colors" },
+      { "name": "The Gold Restraint Rule", "body": "El dorado solo es decorativo en objetos y pertenece a textos grandes con AA ≥ 4.5:1; prohibido en párrafos.", "section": "colors" },
+      { "name": "The Editorial Authority Rule", "body": "Los héroes y títulos de sección usan la serif; el resto, sans.", "section": "typography" },
+      { "name": "The Lunar Glow Rule", "body": "La profundidad se anuncia con luz de marca, nunca con sombra difusa. Sombra gris = ruido visual.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do usar el Halo CTA solo en acciones primarias y en el botón de confirmación de reserva (rareza = jerarquía).",
+      "Do ampliar la escala tipográfica a la serif en héroes y títulos de sección.",
+      "Do usar glass y blur encima de fotos/gráficos para que el texto mantenga AA sin pelear con la imagen.",
+      "Do mantener el contraste AA ≥ 4.5:1 sobre Negro Medianoche (el blanco en texto es Rosa Perlado, no #fff).",
+      "Do asegurar prefers-reduced-motion en todas las animaciones (orb nativo + utilities).",
+      "Do mantener el dark como tema por defecto; claro es segundo, derivado con los mismísimos roles."
+    ],
+    "donts": [
+      "Don't usar niveles de gris neutro (#999/#eee) sobre fondos oscuros; sustituir por Ciruela Oscura y Lavanda Griseada.",
+      "Don't aplicar dorado en párrafos o etiquetas pequeñas (contraste + lujo barato); es decorativo.",
+      "Don't anidar cards dentro de cards de igual fondo; la jerarquía se resuelve con escalón de luz, no con cajas.",
+      "Don't usar easing bounce/elástico: la sensación es fija y seria (transiciones estándar 0.15–0.3s).",
+      "Don't liberar el glow para el 100 % de un color plano; el corpus del sistema es oscuro, material y sutil.",
+      "Don't cambiar el nombre de los roles de color al portar a otro cliente; se personalizan los valores, no la semántica."
+    ]
+  }
+}

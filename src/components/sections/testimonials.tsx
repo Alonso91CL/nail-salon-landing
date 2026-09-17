@@ -48,8 +48,8 @@ export function Testimonials() {
           ))}
         </CarouselContent>
         <div className="mt-6 flex items-center justify-center gap-4">
-          <CarouselPrevious className="static inset-auto" aria-label="Testimonio anterior" />
-          <CarouselNext className="static inset-auto" aria-label="Testimonio siguiente" />
+          <CarouselPrevious className="static inset-auto size-11" aria-label="Testimonio anterior" />
+          <CarouselNext className="static inset-auto size-11" aria-label="Testimonio siguiente" />
         </div>
       </Carousel>
     </SectionShell>
