@@ -27,6 +27,7 @@
   --color-ring: var(--ring);
   --color-input: var(--input);
   --color-border: var(--border);
+  --color-destructive-foreground: var(--destructive-foreground);
   --color-destructive: var(--destructive);
   --color-accent-foreground: var(--accent-foreground);
   --color-accent: var(--accent);
@@ -68,6 +69,7 @@
   --accent: #f5c542;
   --accent-foreground: #1a1200;
   --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
   --border: #ebd3e2;
   --input: #f3e4ee;
   --ring: #c2185b;
@@ -105,6 +107,7 @@
   --accent: #f5c542;
   --accent-foreground: #1a1200;
   --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
   --border: #3a2540;
   --input: #1a0f20;
   --ring: #ff3d9a;
@@ -176,15 +179,62 @@ html.dark {
   }
 }
 
+@keyframes glow-pulse {
+  0%,
+  100% {
+    box-shadow:
+      0 0 24px color-mix(in srgb, var(--primary-glow) 55%, transparent),
+      0 0 64px color-mix(in srgb, var(--primary-glow) 25%, transparent);
+  }
+  50% {
+    box-shadow:
+      0 0 32px color-mix(in srgb, var(--primary-glow) 75%, transparent),
+      0 0 88px color-mix(in srgb, var(--primary-glow) 40%, transparent);
+  }
+}
+
+@keyframes orb-halo {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.75;
+    transform: scale(1.12);
+  }
+}
+
+@keyframes m-seal {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .animate-sparkle {
   animation: sparkle 2.6s ease-in-out infinite;
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 3.2s ease-in-out infinite;
+}
+
+.animate-orb-halo {
+  animation: orb-halo 3.2s ease-in-out infinite;
+}
+
+.animate-m-seal {
+  animation: m-seal 16s linear infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
-  .animate-sparkle {
+  .animate-sparkle,
+  .animate-glow-pulse,
+  .animate-orb-halo,
+  .animate-m-seal {
     animation: none;
   }
 }

@@ -18,6 +18,10 @@ export function HeroOrb({ color = "#FF3D9A", className, label, size: fixedSize }
 
   return (
     <div className={cn("relative", className)} role="img" aria-label={label}>
+      <div
+        aria-hidden="true"
+        className="animate-orb-halo absolute -inset-10 -z-10 rounded-full bg-primary-glow blur-2xl"
+      />
       {supported ? (
         <FluidOrb
           size={size}
