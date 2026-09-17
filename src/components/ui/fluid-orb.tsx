@@ -1,6 +1,7 @@
 'use client'
 
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
+import { motion } from 'motion/react'
 
 import { cn } from '@/lib/utils'
 
@@ -79,7 +80,8 @@ void main() {
   col = mix(col, light, smoothstep(0.28, 0.52, shade));
   col = mix(col, dark, smoothstep(0.58, 0.88, shade));
 
-  float edge = smoothstep(0.5, 0.49, distance(uv, vec2(0.5)));
+  float d = distance(uv, vec2(0.5));
+  float edge = 1.0 - smoothstep(0.3, 0.5, d);
 
   gl_FragColor = vec4(col * edge, edge);
 }
@@ -116,6 +118,7 @@ const FluidOrb = ({
   ...props
 }: FluidOrbProps) => {
   const canvasRef = useRef<HTMLCanvasElement>(null)
+  const [ready, setReady] = useState(false)
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -170,6 +173,7 @@ const FluidOrb = ({
       if (!reduce) raf = requestAnimationFrame(render)
     }
     render(start)
+    requestAnimationFrame(() => setReady(true))
 
     return () => {
       cancelAnimationFrame(raf)
@@ -183,7 +187,11 @@ const FluidOrb = ({
   return (
     <div
       data-slot="fluid-orb"
-      className={cn('relative overflow-hidden rounded-full', className)}
+      className={cn(
+        'relative overflow-hidden rounded-full transition-all duration-[1800ms] ease-[cubic-bezier(0.22,1,0.36,1)]',
+        ready ? 'opacity-100 scale-100' : 'opacity-0 scale-80',
+        className,
+      )}
       style={{
         width: size,
         height: size,
