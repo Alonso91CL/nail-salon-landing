@@ -36,7 +36,7 @@ export default function OpengraphImage() {
           M
         </div>
         <div style={{ fontSize: 76, fontWeight: 700, marginTop: 36 }}>Magnetica Beauty Bar</div>
-        <div style={{ fontSize: 34, marginTop: 18, color: "#b9a3c4" }}>Uñas que hipnotizan ✦</div>
+        <div style={{ fontSize: 34, marginTop: 18, color: "#b9a3c4" }}>Uñas que hipnotizan</div>
         <div style={{ fontSize: 24, marginTop: 10, color: "#ff3d9a" }}>
           Manicure · Soft gel · Nail art · San Bernardo
         </div>

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Geist_Mono, Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -10,6 +10,12 @@ const inter = Inter({
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
   subsets: ["latin"],
   display: "swap",
 });
@@ -37,7 +43,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="es"
       suppressHydrationWarning
-      className={`${inter.variable} ${playfair.variable} h-full antialiased`}
+      className={`${inter.variable} ${playfair.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <a
@@ -47,7 +53,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           Ir a reservar
         </a>
         {children}
-      </body>
+      {/* impeccable-live-start */}
+      {/* eslint-disable-next-line @next/next/no-sync-scripts -- dev-only live-mode helper injected by Impeccable */}
+<script src="http://localhost:8400/live.js?token=b92cd50b-b5b9-4ea8-8735-9215900af947"></script>
+{/* impeccable-live-end */}
+</body>
     </html>
   );
 }
