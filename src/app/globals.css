@@ -211,6 +211,17 @@ html.dark {
   }
 }
 
+@keyframes orb-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 .animate-sparkle {
   animation: sparkle 2.6s ease-in-out infinite;
 }
@@ -221,6 +232,10 @@ html.dark {
 
 .animate-orb-halo {
   animation: orb-halo 3.2s ease-in-out infinite;
+}
+
+.animate-orb-in {
+  animation: orb-in 1.2s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .animate-m-seal {
@@ -234,6 +249,7 @@ html.dark {
   .animate-sparkle,
   .animate-glow-pulse,
   .animate-orb-halo,
+  .animate-orb-in,
   .animate-m-seal {
     animation: none;
   }
