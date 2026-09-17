@@ -27,6 +27,10 @@ Landing page demo para salón de uñas: Next.js 16 + Tailwind v4 + shadcn/ui + r
 - No force-push ni reescritura de historia en `master`/`develop`.
 - **Formato de commit: Conventional Commits, siempre en inglés**, tan detallados y simples a la vez como sea posible: `<type>: <imperative summary ≤72 chars>` + body opcional con el *qué* y el *por qué*. Tipos: `feat:` (funcionalidad nueva), `fix:` (bug), `docs:` (documentación), `style:` (formato, sin cambio de lógica), `refactor:`, `perf:`, `test:`, `chore:` (build/deps/mantenimiento), `revert:`. Ejemplos: `feat: add fluid-orb hero with magenta WebGL gradient`, `fix: clamp orb size on 375px viewports`, `docs: sync pnpm commands in .docs`. Un commit = un cambio lógico (sin commits "mixtos").
 - **Prohibido toda escritura de Git sin pedido explícito del usuario.** Ningún `git commit`, `merge`, `rebase`, `cherry-pick`, `reset`, `tag`, `push`, cambio de rama con `-b`, ni creación de PR/branch, a menos que el usuario lo solicite explícitamente en su mensaje ("comitea", "haz merge de X", etc.). En caso de duda: preguntar, no ejecutar. Las acciones seguras permitidas son de solo lectura (`status`, `log`, `diff`, `show`).
+- **Comandos Git Flow** (solo bajo pedido explícito del usuario):
+  - *Feature:* `git checkout -b feature/<name> develop` → trabajo → `git checkout develop; git merge --no-ff feature/<name>` → `git branch -d feature/<name>` → push develop.
+  - *Release:* `git checkout -b release/v<X.Y.Z> develop` → bump version + fixes → `git checkout master; git merge --no-ff release/v<X.Y.Z> -m "release: v<X.Y.Z>"` → `git tag -a v<X.Y.Z> -m "release v<X.Y.Z>"` → `git checkout develop; git merge --no-ff release/v<X.Y.Z>` → `git branch -d release/v<X.Y.Z>` → `git push origin master develop --follow-tags`.
+  - *Hotfix:* `git checkout -b hotfix/<name> master` → fix → `git checkout master; git merge --no-ff hotfix/<name>` → `git checkout develop; git merge --no-ff hotfix/<name>` → `git push origin master develop` → eliminar rama hotfix (local + remote).
 
 ## Toolchain (Windows — gotchas reales)
 
